@@ -1,0 +1,16 @@
+{
+    "name": "maranatha/eoop-plugin-example",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Ernie Lail",
+            "email": "ernie@example.com"
+        }
+    ],
+    "require": {},
+    "autoload":{
+        "psr-4": {
+            "Maranatha\\": "classes/Maranatha/"
+        }
+    }
+}
