@@ -6,19 +6,19 @@ namespace Maranatha;
 class Oop {
 	
 
-	var $initiated = false;
+	private $initiated = false;
 
 	public function __construct() {
 		
 		if(!$this->initiated){
-			$this->init_hooks();
+			$this->init();
 		}
 		
 	}
 
 
 	//Initializes WordPress hooks here
-	private function init_hooks() {
+	private function init() {
 		
 		$this->initiated = true;
 		
@@ -28,6 +28,10 @@ class Oop {
 		//add the custom welcome panel
 		add_action( 'welcome_panel', array($this, 'welcome_panel') );
 
+
+		//register methods that should be called on activation/deactivation
+		register_activation_hook( __FILE__, array( $this, 'plugin_activation' ) );
+		register_deactivation_hook( __FILE__, array( $this, 'plugin_deactivation' ) );
 
 	}
 
