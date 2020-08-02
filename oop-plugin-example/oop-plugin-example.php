@@ -27,7 +27,3 @@ define( 'OOP_EXAMPLE_PLUGIN__VERSION', '1.0.0' );
 define( 'OOP_EXAMPLE_PLUGIN__PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
 $oopInit = new Oop();
-
-//register methods that should be called on activation/deactivation
-register_activation_hook( __FILE__, array( $oopInit, 'plugin_activation' ) );
-register_deactivation_hook( __FILE__, array( $oopInit, 'plugin_deactivation' ) );
